@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-color: hsl(210, 46%, 95%);
+  width: 100%;
+  min-height: 100vh;
+}
+.card {
+  width: 70%;
+  max-width: 1440px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
