@@ -15,8 +15,11 @@
   max-width: 1440px;
   font-family: "Barlow Semi Condensed", sans-serif;
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 200px 180px;
+  grid-template-areas:
+    "div1 div1 div2 div3"
+    "div4 div5 div5 div3";
   padding: 10px;
   gap: 10px;
   font-family: "Barlow Semi Condensed", sans-serif;
@@ -24,35 +27,28 @@
 
 .one {
   background-color: hsl(263, 55%, 52%);
-  grid-column: 1/3;
+  grid-area: div1;
   background-image: url(/images/bg-pattern-quotation.svg);
   background-repeat: no-repeat;
   background-position: 230px top;
 }
 .two {
   background-color: hsl(217, 19%, 35%);
+  grid-area: div2;
 }
 .three {
   background-color: hsl(0, 0%, 100%);
-  grid-column: 4/5;
-  grid-row: -3/-1;
+  grid-area: div3;
 }
 .four {
   background-color: hsl(0, 0%, 100%);
+  grid-area: div4;
 }
 .five {
   background-color: hsl(219, 29%, 14%);
-  grid-column: -4/-2;
+  grid-area: div5;
 }
-.six {
-  background-color: violet;
-}
-.seven {
-  background-color: orange;
-}
-.eight {
-  background-color: orangered;
-}
+
 .onebody {
   margin: 15px;
 }
@@ -98,4 +94,26 @@ h4 {
 .texty {
   padding-right: 50px;
   color: hsl(217, 19%, 35%);
+}
+@media screen and (max-width: 600px) {
+  .container {
+    background-color: hsl(210, 46%, 95%);
+  }
+  .card {
+    width: 100%;
+    max-width: 375px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "div1"
+      "div2"
+      "div4"
+      "div5"
+      "div3";
+    margin: 20px 0;
+  }
+  .onebody {
+    margin: 20px 20px;
+  }
 }
